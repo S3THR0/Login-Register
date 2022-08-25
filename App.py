@@ -1,7 +1,6 @@
 import sqlite3
 import maskpass
 import socket
-from admintools import *
 from module import *
 
 #connect to database
