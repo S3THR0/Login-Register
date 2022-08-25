@@ -11,7 +11,8 @@ c.execute("""CREATE TABLE members(
         last_name text,
         email text NOT NULL UNIQUE,
         user_name text NOT NULL UNIQUE,
-        password text
+        password text,
+        privilege integer
     )""")
 
 #5 datatypes, NULL, INTEGER, REAL, TEXT, BLOB
