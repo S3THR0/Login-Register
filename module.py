@@ -1,7 +1,7 @@
 import sqlite3
 import maskpass
 import socket
-import os
+
 
 conn = sqlite3.connect("projectx.db")
 #sqlite3.connect(":memory:") for temp
@@ -49,7 +49,6 @@ def Credentials():
 
 
     k=input("press enter to exit")
-    os.system("clear")
     #commit command/save our progress
     conn.commit()
     #close connection
@@ -75,7 +74,6 @@ def Register():
             privilege = 0
 
         password = maskpass.askpass(mask="")
-        os.system("clear")
         member_info = [
                         (firstname, lastname, email, username, password, privilege)
                     ]
@@ -110,7 +108,6 @@ def RRegister():
             privilege = 0
 
         password = maskpass.askpass(mask="")
-        os.system("clear")
         print("0 = non root, 1 = root")
         priveledge =input("Priveledge (0 or 1)")
         member_info = [
@@ -131,7 +128,7 @@ def Login():
     password = maskpass.askpass(mask="")
     hostname = socket.gethostname()
     IPAddr = socket.gethostbyname(hostname)
-    os.system("clear")
+
     #connect to database
     conn = sqlite3.connect("projectx.db")
             #sqlite3.connect(":memory:") for temp
@@ -168,13 +165,10 @@ def Login():
         
         selection = input("Please Select:")
         if selection =='1': 
-            os.system("clear")
             Roster()
         elif selection == '2':
-            os.system("clear")
             Credentials()
         elif selection == '3':
-            os.system("clear")
             RRegister()
         elif selection == '7':
             os.system("clear")
