@@ -2,6 +2,11 @@ import sqlite3
 import maskpass
 import socket
 from module import *
+import pyfiglet
+
+#Text in alligator font
+out = pyfiglet.figlet_format("Point", font="alligator")
+print(out)
 
 #connect to database
 conn = sqlite3.connect("projectx.db")

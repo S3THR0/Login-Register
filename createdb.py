@@ -1,4 +1,10 @@
 import sqlite3
+import pyfiglet
+
+
+#Text in alligator font
+out = pyfiglet.figlet_format("S3THR0", font="alligator")
+print(out)
 
 #connect to database
 conn = sqlite3.connect("projectx.db")
