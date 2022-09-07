@@ -5,7 +5,7 @@ from module import *
 import pyfiglet
 
 #Text in alligator font
-out = pyfiglet.figlet_format("Point", font="alligator")
+out = pyfiglet.figlet_format("S3THR0", font="alligator")
 print(out)
 
 #connect to database

@@ -171,7 +171,6 @@ def Login():
         elif selection == '3':
             RRegister()
         elif selection == '7':
-            os.system("clear")
             break
         else:
             print("Unknown Option Selected!")
