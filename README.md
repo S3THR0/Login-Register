@@ -1,25 +1,44 @@
 # LOGIN/REGISTER
 
-STEP 0 : OPEN COMMAND LINE/ BE IN ACTIVE DIRECTORY
+## Setup Instructions
 
-STEP 1 : RUN "pip install -r requirements.txt"
+1. Open the command line and navigate to the active directory.
 
-STEP 2 : RUN "python3 createdb.py"
+2. Run the following command to install the required dependencies:
+```
+pip install -r requirements.txt
+```
 
-STEP 3 : RUN "python3 App.py"
+3. Run the following command to create the database:
+```
+python3 createdb.py
+```
 
-STEP 4 : REGISTER ROOT USERNAME FIRST as (root)
-(REGISTERING NEW USERS FROM ROOT ALLOWS ROOT PRIVELEDGE SELECTION FOR NEW USERS)
+4. Launch the application by running:
+```
+python3 App.py
+```
 
-# ADMIN TOOLS
+## User Registration
 
-Roster shows all current accounts in database.
+To use the application, follow these steps to register your root username (root) and grant privileged access:
 
-Credentials receives the login,password details of user accounts.
+1. After launching the application, register your root username as the first user.
 
-Register allows you to register new users, and select their priveledge.
+## Admin Tools
 
-# Notes
+The application provides the following admin tools:
 
-there are many plans for the future, im aware this is not secure for production. this is my learn as i go project.
-You may use this ontop of your own code.
+- **Roster**: Displays a list of all current accounts in the database.
+
+- **Credentials**: Retrieves the login and password details of user accounts.
+
+- **Register**: Allows you to register new users and select their privilege level.
+
+## Important Note
+
+Please note that this project is a learning experience and not intended for production use as it lacks security measures. You can build upon this codebase for your own purposes.
+
+Feel free to incorporate this into your existing codebase and make necessary enhancements.
+
+Should you have any questions or encounter any issues, please let me know.
