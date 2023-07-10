@@ -4,35 +4,34 @@ import socket
 from module import *
 import pyfiglet
 
-#Text in alligator font
-out = pyfiglet.figlet_format("S3THR0", font="alligator")
-print(out)
+def main():
+    #Text in alligator font
+    out = pyfiglet.figlet_format("S3THR0", font="alligator")
+    print(out)
 
-#connect to database
-conn = sqlite3.connect("projectx.db")
-        #sqlite3.connect(":memory:") for temp
-#create cursor
-c = conn.cursor()
+    #connect to database
+    conn = connect_to_db()
 
-menu = """
-['L']="Login"
-['R']="Register"
-['exit']="Exit"
-"""
-print(menu)
+    menu = {
+        'L': Login,
+        'R': Register,
+        'exit': exit
+    }
 
-selection = input("Please Select:")
-if selection =='L':
-    Login()
-elif selection == 'R':
-    Register()
-elif selection == 'exit':
-    exit()
-else:
-    print("Unknown Option Selected!")
+    for key, value in menu.items():
+        print(f'[{key}]', value.__name__ if callable(value) else value)
 
-#commit command/save our progress
-conn.commit()
-#close connection
-conn.close()
+    selection = input("Please Select:")
+    if selection in menu:
+        if callable(menu[selection]):
+            menu[selection](conn)
+        else:
+            exit()
+    else:
+        print("Unknown Option Selected!")
 
+    #commit command/save our progress
+    disconnect_from_db(conn)
+
+if __name__ == "__main__":
+    main()
